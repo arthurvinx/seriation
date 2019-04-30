@@ -1,31 +1,28 @@
 # Seriation
 This software is an efficient implementation of the [Seriation](http://www.jstatsoft.org/v25/i03) problem which 'finds a suitable linear order for a set of objects'. It has been used to order a network of proteins such that 'related' nodes are closer in the other.
 
-[![Build Status](https://travis-ci.org/amamory/seriation.svg?branch=master)](https://travis-ci.org/amamory/seriation)
-[![DOI](https://zenodo.org/badge/92440644.svg)](https://zenodo.org/badge/latestdoi/92440644)
-
 
 ## Authors
 
-The Seriation Package was developed by [Felipe Kuentzer](http://lattes.cnpq.br/1979213773480902), in collaboration with 
+The software was developed by [Felipe Kuentzer](http://lattes.cnpq.br/1979213773480902), in collaboration with 
 Douglas G. Ávila, Alexandre Pereira, Gabriel Perrone, Samoel da Silva, [Alexandre Amory](http://lattes.cnpq.br/2609000874577720), and [Rita de Almeida](http://lattes.cnpq.br/4672766298301524).
 
-**Contact information**: Alexandre Amory (*alexandre.amory at pucrs.br*)
+The version provided here was modified by [Clovis Ferreira dos Reis](http://lattes.cnpq.br/5487049518249525) to improve the textual feedback and to avoid bugs like:
+* Duplication of identifiers on the ordering output.
+* Segmentation fault while reading an input file containing many nodes.
+
 
 ## Inputs
 
-The input file is a textual file describing an undirected network of nodes (in our examples the nodes are protein names). Example:
+The input file is a textual file describing an undirected network of nodes (in our examples the nodes are labeled by ENSEMBL Peptide IDs). Example:
 <pre>
-L7007 L7008
-L7008 L7007
-L7010 L7011
-L7011 L7010
-L7014 L7015
-L7015 L7014
-L7017 Z1275
+362663.ECP_0002	362663.ECP_4228
+362663.ECP_0002	362663.ECP_0939
+362663.ECP_4228 362663.ECP_0002
+362663.ECP_0939 362663.ECP_0002
 </pre>
 
-In the tab Files you can find networks for different species such as [Escherichia coli](data/Escherichia_coli.dat), [Mus musculus](data/Mus_musculus.dat), [Saccharomyces cerevisiae](data/Saccharomyces_cerevisiae.dat), [Homo sapiens](data/Homo_sapiens.dat), among others.
+This repository contains an example input file from Escherichia coli named [362663.protein.links.900.v11.0.txt](362663.protein.links.900.v11.0.txt).
 
 ## Outputs
 
@@ -98,8 +95,8 @@ cfm-seriation
 Usage: cfm-seriation [OPTION...]
 
  Seriation Parameters:
-   f=[NETWORK FILE].dat       Network file path name
-   o=[ORDER FILE].dat         Apply initial order
+   f=[NETWORK FILE]       Network file path name
+   o=[ORDER FILE]         Apply initial order
    i=[INTERVAL]               Number of isothermal steps
    m=[STEPS]                  Number of steps
    c=[FACTOR]                 Cooling factor
@@ -124,8 +121,8 @@ This will consume some extra time.
 Usage: cfm-seriation [OPTION...]
 
  Seriation Parameters:
-   f=[NETWORK FILE].dat       Network file path name
-   o=[ORDER FILE].dat         Apply initial order
+   f=[NETWORK FILE]       Network file path name
+   o=[ORDER FILE]         Apply initial order
    i=[INTERVAL]               Number of isothermal steps
    m=[STEPS]                  Number of steps
    c=[FACTOR]                 Cooling factor
