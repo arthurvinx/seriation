@@ -19,9 +19,18 @@ Compilation requires GCC. To compile this software invoke the following commands
 </pre>
 
 ## How to use
-Type "./ordering1D" to show the options:
+To execute the software invoke this command on the shell:
 
 <pre>
+> ./ordering1D f=<absolute path>
+</pre>
+
+Parameters list:
+<pre>
+> ./ordering1D
+
+An association file name is necessary! No default!
+
 Parameters list:
         f=Association file
         i=Number of isothermal steps
@@ -41,35 +50,12 @@ a=1.0
 p=0.0001
 </pre>
 
-To execute the software type:
-
-<pre>
-./ordering1D f=<absolute path>
-</pre>
-
-The input file is a textual file describing an undirected network of nodes. In our [example](data/362663.protein.links.900.v11.0.txt) the nodes are labeled by ENSEMBL Peptide IDs.
-
-For a quicker test you can execute smaller dataset, like the Escherichia Coli.
-
-> ./cfm-seriation f=Escherichia_coli.dat
-
-The results are save in the input file directory.
-
-## Inputs
-
-The input file is a textual file describing an undirected network of nodes (in our examples the nodes are labeled by ENSEMBL Peptide IDs). Example:
-<pre>
-362663.ECP_0002	362663.ECP_4228
-362663.ECP_0002	362663.ECP_0939
-362663.ECP_4228 362663.ECP_0002
-362663.ECP_0939 362663.ECP_0002
-</pre>
-
-This repository contains an example input file from Escherichia coli named [362663.protein.links.900.v11.0.txt](362663.protein.links.900.v11.0.txt).
+The input file is a textual file describing an undirected network of nodes. This repository
+contains an [example file](data/362663.protein.links.900.v11.0.txt) from *Escherichia coli*. In this example, the nodes are labeled by ENSEMBL Peptide IDs.
 
 ## Outputs
 
-The output is a text file with the order of the network nodes. Example:
+The results are save in the input file directory. The output is a text file with the order of the network nodes. Example:
 
 <pre>
 Protein	dim1
