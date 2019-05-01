@@ -1,5 +1,5 @@
 ## About this software
-This software solves the [Seriation](http://www.jstatsoft.org/v25/i03) problem finding a suitable linear order for a set of proteins. The result is a list of proteins ordered in one dimension, such that functionally associated proteins are closer.
+This software solves the [Seriation](http://www.jstatsoft.org/v25/i03) problem finding a suitable linear order for a set of proteins. The result is a list of proteins ordered in one dimension such that functionally associated proteins are closer.
 
 ## Authors
 The software was developed by [Felipe Kuentzer](http://lattes.cnpq.br/1979213773480902), in collaboration with 
@@ -136,10 +136,9 @@ The source code is distributed under the terms of the GNU General Public License
 
 ## How to Cite this software
 If you are using this package on your research, please cite:
-<pre>
-[Kuentzer, F. A. et al. (2014). Optimization and analysis of seriation algorithm for ordering protein networks.
+
+* [Kuentzer, F. A. et al. (2014). Optimization and analysis of seriation algorithm for ordering protein networks.
 IEEE International Conference on Bioinformatics and Bioengineering, 231-237.](https://doi.org/10.1109/BIBE.2014.43)
-</pre>
 
 ## Similar softwares
 * [Seriation R Package](http://www.jstatsoft.org/v25/i03), available at [CRAN](http://cran.r-project.org/web/packages/seriation/index.html).
