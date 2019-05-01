@@ -1,4 +1,4 @@
-# Seriation
+## About this software
 This software solves the [Seriation](http://www.jstatsoft.org/v25/i03) problem finding a suitable linear order for a set of proteins. The result is a list of proteins ordered in one dimension, such that functionally associated proteins are closer.
 
 ## Authors
@@ -13,13 +13,12 @@ The version provided here was modified by [Clovis Ferreira dos Reis](http://latt
 Compilation requires GCC. To compile this software invoke the following commands on the shell:
 <pre>
 wget https://github.com/arthurvinx/seriation/archive/master.zip
-gunzip seriation-master.zip
-cd seriation-master
-gcc ordering1d.c -o ordering1d -lm
+unzip master.zip
+cd seriation-master/
+gcc ordering1D.c -o ordering1D -lm
 </pre>
 
 ## How to Use
-
 type 'cfm-seriation' to show the options:
 
 <pre>
@@ -137,8 +136,10 @@ The source code is distributed under the terms of the GNU General Public License
 
 ## How to Cite this software
 If you are using this package on your research, please cite:
-* [Kuentzer, F. A. et al. (2014). Optimization and analysis of seriation algorithm for ordering protein networks.
+<pre>
+[Kuentzer, F. A. et al. (2014). Optimization and analysis of seriation algorithm for ordering protein networks.
 IEEE International Conference on Bioinformatics and Bioengineering, 231-237.](https://doi.org/10.1109/BIBE.2014.43)
+</pre>
 
 ## Similar softwares
 * [Seriation R Package](http://www.jstatsoft.org/v25/i03), available at [CRAN](http://cran.r-project.org/web/packages/seriation/index.html).
