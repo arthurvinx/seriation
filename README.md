@@ -1,9 +1,7 @@
 # Seriation
-This software is an efficient implementation of the [Seriation](http://www.jstatsoft.org/v25/i03) problem which 'finds a suitable linear order for a set of objects'. It has been used to order a network of proteins such that 'related' nodes are closer in the other.
-
+This software solves the [Seriation](http://www.jstatsoft.org/v25/i03) problem finding a suitable linear order for a set of proteins. The result is a list of proteins ordered in one dimension, such that functionally associated proteins are closer.
 
 ## Authors
-
 The software was developed by [Felipe Kuentzer](http://lattes.cnpq.br/1979213773480902), in collaboration with 
 Douglas G. Ávila, Alexandre Pereira, Gabriel Perrone, Samoel da Silva, [Alexandre Amory](http://lattes.cnpq.br/2609000874577720), and [Rita de Almeida](http://lattes.cnpq.br/4672766298301524).
 
@@ -11,79 +9,14 @@ The version provided here was modified by [Clovis Ferreira dos Reis](http://latt
 * Duplication of identifiers on the ordering output.
 * Segmentation fault while reading an input file containing many nodes.
 
-
-## Inputs
-
-The input file is a textual file describing an undirected network of nodes (in our examples the nodes are labeled by ENSEMBL Peptide IDs). Example:
-<pre>
-362663.ECP_0002	362663.ECP_4228
-362663.ECP_0002	362663.ECP_0939
-362663.ECP_4228 362663.ECP_0002
-362663.ECP_0939 362663.ECP_0002
-</pre>
-
-This repository contains an example input file from Escherichia coli named [362663.protein.links.900.v11.0.txt](362663.protein.links.900.v11.0.txt).
-
-## Outputs
-
-The output is a text file with the order of the network nodes. Example:
-
-<pre>
-Protein	dim1
-Z5822	0
-Z5823	1
-Z2911	2
-Z2910	3
-Z2909	4
-Z4123	5
-Z4124	6
-Z3105	7
-Z3106	8
-...
-</pre>
-
-The following image represents the Homo sapiens network with a *random ordering*.
-
-![initial](initial.png)
-
-The next image represents the Homo sapiens network **'seriated'**.
-
-![final](final.png)
-
-
-## Download and Instalation
-
-The Seriation Package is developed in C and tested on Ubuntu 14.04.
-* Download the [package](https://github.com/amamory/seriation/releases/latest) .
-* Is recommended to update your packages before the instalation:
-> sudo apt-get install update
-* To install, you can double-click it or execute:
-> sudo dpkg -i cfm-seriation_1.0-1_amd64.deb
-* In case of missing dependencies, try: 
-> sudo apt-get install -f
-* To unistall:
-> sudo dpkg -r cfm-seriation
-
-* this distribution has the following files
-
-<pre>
-/usr/share/cfm-seriation/bin/             Executable file
-/usr/share/cfm-seriation/etc/             Auxiliar used to plot charts with GNUPLOT
-/usr/share/cfm-seriation/data/            Biological input networks
-/usr/share/cfm-seriation/src/             Source code in C
-</pre>
-
-
 ## Download and Compilation
-
-> sudo apt-get install git
-
-> git clone https://github.com/amamory/seriation.git
-
-> cd seriation
-
-> gcc cfm-seriation.c -lm -lpthread -lrt -o cfm-seriation
-
+Compilation requires GCC. To compile this software invoke the following commands on the shell:
+<pre>
+wget https://github.com/arthurvinx/seriation/archive/master.zip
+gunzip seriation-master.zip
+cd seriation-master
+gcc ordering1d.c -o ordering1d -lm
+</pre>
 
 ## How to Use
 
@@ -160,35 +93,52 @@ Saving final order...
 Done!
 </pre>
 
-The results are save in a different directory for each execution. 
+The results are save in the input file directory. 
+## Inputs
 
-## Further Information
-
-
-* [Optimization and Analysis of Seriation Algorithm for Ordering Protein Networks](http://ieeexplore.ieee.org/document/7033586/). This paper describes the optimizations implemented in this package.
-
-
-* Felipe's Master Thesis [Otimização e análise de algoritmos de ordenamento de redes proteicas](http://hdl.handle.net/10923/6663). Full description of the optimizations implemented in this package (in Portuguese).
-
-## License
-
-The source code is distributed under the terms of the GNU General Public License v3 [GPL](http://www.gnu.org/copyleft/gpl.html).
-
-## How to Cite this Package
-
-If you are using this package on your research, please cite our paper:
-* [Optimization and Analysis of Seriation Algorithm for Ordering Protein Networks](http://ieeexplore.ieee.org/document/7033586/)
-
+The input file is a textual file describing an undirected network of nodes (in our examples the nodes are labeled by ENSEMBL Peptide IDs). Example:
 <pre>
-KUENTZER, Felipe A. et al. Optimization and analysis of seriation algorithm for ordering protein networks. 
-In: IEEE International Conference on Bioinformatics and Bioengineering (BIBE), 2014. p. 231-237.
+362663.ECP_0002	362663.ECP_4228
+362663.ECP_0002	362663.ECP_0939
+362663.ECP_4228 362663.ECP_0002
+362663.ECP_0939 362663.ECP_0002
 </pre>
 
-## Where Seriation is Used
+This repository contains an example input file from Escherichia coli named [362663.protein.links.900.v11.0.txt](362663.protein.links.900.v11.0.txt).
 
-If you are using the Seriation Package, please send an email to *alexandre.amory at pucrs.br* so we can update this list of users:
-* [Transcriptogrammer](http://lief.if.ufrgs.br/pub/biosoftwares/transcriptogramer/)
+## Outputs
 
-## Similar Packages
+The output is a text file with the order of the network nodes. Example:
 
-* [R Package seriation](http://www.jstatsoft.org/v25/i03), available at http://cran.r-project.org/web/packages/seriation/index.html.
+<pre>
+Protein	dim1
+Z5822	0
+Z5823	1
+Z2911	2
+Z2910	3
+Z2909	4
+Z4123	5
+Z4124	6
+Z3105	7
+Z3106	8
+...
+</pre>
+
+The following image represents the Homo sapiens network with a *random ordering*.
+
+![initial](initial.png)
+
+The next image represents the Homo sapiens network **'seriated'**.
+
+![final](final.png)
+
+## License
+The source code is distributed under the terms of the GNU General Public License v3 [GPL](http://www.gnu.org/copyleft/gpl.html).
+
+## How to Cite this software
+If you are using this package on your research, please cite:
+* [Kuentzer, F. A. et al. (2014). Optimization and analysis of seriation algorithm for ordering protein networks.
+IEEE International Conference on Bioinformatics and Bioengineering, 231-237.](https://doi.org/10.1109/BIBE.2014.43)
+
+## Similar softwares
+* [Seriation R Package](http://www.jstatsoft.org/v25/i03), available at [CRAN](http://cran.r-project.org/web/packages/seriation/index.html).
