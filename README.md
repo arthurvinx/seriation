@@ -1,6 +1,8 @@
 ## About this software
 This software solves the [Seriation](http://www.jstatsoft.org/v25/i03) problem finding a suitable linear order for a set of proteins. The result is a list of proteins ordered in one dimension such that functionally associated proteins are closer.
 
+![Figure 1](figure/F1.png)
+
 ## Authors
 The software was developed by [Felipe Kuentzer](http://lattes.cnpq.br/1979213773480902), in collaboration with 
 Douglas G. Ávila, Alexandre Pereira, Gabriel Perrone, Samoel da Silva, [Alexandre Amory](http://lattes.cnpq.br/2609000874577720), and [Rita de Almeida](http://lattes.cnpq.br/4672766298301524).
@@ -59,15 +61,8 @@ Protein-protein interaction network data can be downloaded from [STRING](https:/
 ## Outputs
 Two text files will be saved in the association file directory, one containing the prefix "energy_" detailing the ordering process, and one containing the prefix "ordering_" (this will be your ordered list). The lower the final energy, the better the ordered list. To improve the outputs, I suggest to increase the number of Monte Carlo steps to 20000.
 
-This repository contains an [example of the main output file](output/ordering_362663.protein.links.900.v11.0.txt).
-
-This figure represents the *Escherichia coli* PPI network ordered randomly.
-
-![initial](initial.png)
-
-The next figure represents the *Escherichia coli* PPI network ordered using this software.
-
-![final](final.png)
+This repository contains an [example of the output produced by this software](output/ordering_362663.protein.links.900.v11.0.txt)
+for the *Escherichia coli* PPI network.
 
 ## License
 The source code is distributed under the terms of the GNU General Public License v3 [GPL](http://www.gnu.org/copyleft/gpl.html).
