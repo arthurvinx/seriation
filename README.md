@@ -22,7 +22,7 @@ Compilation requires GCC. To compile this software invoke the following commands
 To execute the software invoke this command on the shell:
 
 <pre>
-> ./ordering1D f=<absolute path>
+> ./ordering1D f=[absolute path to association file]
 </pre>
 
 Parameters list:
