@@ -9,16 +9,16 @@ The version provided here was modified by [Clovis Ferreira dos Reis](http://latt
 * Duplication of identifiers on the ordering output.
 * Segmentation fault while reading an input file containing many nodes.
 
-## Download and Compilation
+## Download and compilation
 Compilation requires GCC. To compile this software invoke the following commands on the shell:
 <pre>
-wget https://github.com/arthurvinx/seriation/archive/master.zip
-unzip master.zip
-cd seriation-master/
-gcc ordering1D.c -o ordering1D -lm
+> wget https://github.com/arthurvinx/seriation/archive/master.zip
+> unzip master.zip
+> cd seriation-master/
+> gcc ordering1D.c -o ordering1D -lm
 </pre>
 
-## How to Use
+## How to use
 Type "./ordering1D" to show the options:
 
 <pre>
@@ -96,7 +96,7 @@ The next image represents the Homo sapiens network **'seriated'**.
 ## License
 The source code is distributed under the terms of the GNU General Public License v3 [GPL](http://www.gnu.org/copyleft/gpl.html).
 
-## How to Cite this software
+## How to cite this software
 If you are using this package on your research please cite:
 
 * [Kuentzer, F. A. et al. (2014). Optimization and analysis of seriation algorithm for ordering protein networks.
