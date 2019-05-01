@@ -50,22 +50,22 @@ a=1.0
 p=0.0001
 </pre>
 
+## Input
 The input is a text file describing an undirected protein-protein interaction (PPI) network. This repository
 contains an [example file](data/362663.protein.links.900.v11.0.txt) from *Escherichia coli*. In this example, the nodes are labeled by ENSEMBL Peptide IDs.
 
-## Input
 Protein-protein interaction network data can be downloaded from [STRING](https://string-db.org/). You may choose to download the information with the subscores per channel and tune your filters. The input must be a file containing two columns, no header, with rows composed by the IDs of two proteins that interact with each other.
 
 ## Outputs
-Two text files will be saved in the association file directory, one containing the prefix "energy_" (details about the ordering process), and one containing the prefix "ordering_" (this will be the ordered list). The lower the final energy, the better the ordered list. To improve the outputs, I suggest to increase the number of Monte Carlo steps to 20000.
+Two text files will be saved in the association file directory, one containing the prefix "energy_" detailing the ordering process, and one containing the prefix "ordering_" (this will be your ordered list). The lower the final energy, the better the ordered list. To improve the outputs, I suggest to increase the number of Monte Carlo steps to 20000.
 
 This repository contains an [example of the main output file](output/ordering_362663.protein.links.900.v11.0.txt).
 
-The following figure represents the *Escherichia coli* PPI network ordered randomly.
+This figure represents the *Escherichia coli* PPI network ordered randomly.
 
 ![initial](initial.png)
 
-The following figure represents the *Escherichia coli* PPI network ordered using this software.
+The next figure represents the *Escherichia coli* PPI network ordered using this software.
 
 ![final](final.png)
 
