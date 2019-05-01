@@ -24,7 +24,7 @@ args args_parser(int argc, char *argv[]){
    long x;
 
    options.alpha = 1.0;
-   options.mc_steps = 100;
+   options.mc_steps = 2000;
    options.file_name = NULL;
    options.seed = time(NULL);
    options.cooling_factor = 0.5;

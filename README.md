@@ -19,80 +19,42 @@ gcc ordering1D.c -o ordering1D -lm
 </pre>
 
 ## How to Use
-type 'cfm-seriation' to show the options:
+Type "./ordering1D" to show the options:
 
 <pre>
-cfm-seriation
-
-Usage: cfm-seriation [OPTION...]
-
- Seriation Parameters:
-   f=[NETWORK FILE]       Network file path name
-   o=[ORDER FILE]         Apply initial order
-   i=[INTERVAL]               Number of isothermal steps
-   m=[STEPS]                  Number of steps
-   c=[FACTOR]                 Cooling factor
-   a=[ALPHA]                  Alpha value
-   p=[PERCENTUAL]             Percentual energy for initial temperature
-   s=[SEDD]                   Random seed
-   P                          Plot graphs
-   v                          Generate video
+Parameters list:
+        f=Association file
+        i=Number of isothermal steps
+        m=Number of Monte Carlo steps
+        c=Cooling factor
+        a=Alpha value
+        p=Percentual energy for initial temperature
+        s=Random seed
 </pre>
 
-type to execute the seriation. This process can take about 12 minutes, depending on the CPU.
+Parameters default values:
+<pre>
+i=100
+m=2000
+c=0.5
+a=1.0
+p=0.0001
+</pre>
 
-> ./cfm-seriation f=data/Homo_sapiens.dat m=3000 P
-
-In case you want a video of the process, type to execute the seriation. 
-
-> ./cfm-seriation f=/usr/share/cfm-seriation/data/Homo_sapiens.dat m=3000 P v
-
-This will consume some extra time.
+To execute the software type:
 
 <pre>
-Usage: cfm-seriation [OPTION...]
-
- Seriation Parameters:
-   f=[NETWORK FILE]       Network file path name
-   o=[ORDER FILE]         Apply initial order
-   i=[INTERVAL]               Number of isothermal steps
-   m=[STEPS]                  Number of steps
-   c=[FACTOR]                 Cooling factor
-   a=[ALPHA]                  Alpha value
-   p=[PERCENTUAL]             Percentual energy for initial temperature
-   s=[SEDD]                   Random seed
-   P                          Plot graphs
-   v                          Generate video
-
-Reading file...
-	Proteins: 9684
-	Interactions: 163509
-Applying random order...
-Saving and plotting initial order...
-INITIAL Energy: 4123514310
-Ordering...
-100% [====================================================================================================]
+./ordering1D f=<absolute path>
 </pre>
+
+The input file is a textual file describing an undirected network of nodes. In our [example](data/362663.protein.links.900.v11.0.txt) the nodes are labeled by ENSEMBL Peptide IDs.
 
 For a quicker test you can execute smaller dataset, like the Escherichia Coli.
 
 > ./cfm-seriation f=Escherichia_coli.dat
 
-<pre>
-Reading file...
-	Proteins: 3598
-	Interactions: 13687
-Applying random order...
-Saving initial order...
-INITIAL Energy: 129449102
-Ordering...
-100% [====================================================================================================]
-FINAL Energy: 129025784
-Saving final order...
-Done!
-</pre>
+The results are save in the input file directory.
 
-The results are save in the input file directory. 
 ## Inputs
 
 The input file is a textual file describing an undirected network of nodes (in our examples the nodes are labeled by ENSEMBL Peptide IDs). Example:
@@ -135,7 +97,7 @@ The next image represents the Homo sapiens network **'seriated'**.
 The source code is distributed under the terms of the GNU General Public License v3 [GPL](http://www.gnu.org/copyleft/gpl.html).
 
 ## How to Cite this software
-If you are using this package on your research, please cite:
+If you are using this package on your research please cite:
 
 * [Kuentzer, F. A. et al. (2014). Optimization and analysis of seriation algorithm for ordering protein networks.
 IEEE International Conference on Bioinformatics and Bioengineering, 231-237.](https://doi.org/10.1109/BIBE.2014.43)
