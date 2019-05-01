@@ -50,32 +50,22 @@ a=1.0
 p=0.0001
 </pre>
 
-The input file is a textual file describing an undirected network of nodes. This repository
+The input is a text file describing an undirected protein-protein interaction (PPI) network. This repository
 contains an [example file](data/362663.protein.links.900.v11.0.txt) from *Escherichia coli*. In this example, the nodes are labeled by ENSEMBL Peptide IDs.
 
+## Input
+Protein-protein interaction network data can be downloaded from [STRING](https://string-db.org/). You may choose to download the information with the subscores per channel and tune your filters. The input must be a file containing two columns, no header, with rows composed by the IDs of two proteins that interact with each other.
+
 ## Outputs
+Two text files will be saved in the association file directory, one containing the prefix "energy_" (details about the ordering process), and one containing the prefix "ordering_" (this will be the ordered list). The lower the final energy, the better the ordered list. To improve the outputs, I suggest to increase the number of Monte Carlo steps to 20000.
 
-The results are save in the input file directory. The output is a text file with the order of the network nodes. Example:
+This repository contains an [example of the main output file](output/ordering_362663.protein.links.900.v11.0.txt).
 
-<pre>
-Protein	dim1
-Z5822	0
-Z5823	1
-Z2911	2
-Z2910	3
-Z2909	4
-Z4123	5
-Z4124	6
-Z3105	7
-Z3106	8
-...
-</pre>
-
-The following image represents the Homo sapiens network with a *random ordering*.
+The following figure represents the *Escherichia coli* PPI network ordered randomly.
 
 ![initial](initial.png)
 
-The next image represents the Homo sapiens network **'seriated'**.
+The following figure represents the *Escherichia coli* PPI network ordered using this software.
 
 ![final](final.png)
 
