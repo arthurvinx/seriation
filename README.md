@@ -1,7 +1,11 @@
 ## About this software
 This software solves the [Seriation](http://www.jstatsoft.org/v25/i03) problem finding a suitable linear order for a set of proteins. The result is a list of proteins ordered in one dimension such that functionally associated proteins are closer.
 
-![Figure 1](figure/F1.png)
+![figure](figure/F1.png)
+Figure 1. Visual representation of the main output produced by this software.
+(A) Initial state of an adjacency matrix
+containing 4386 *Saccharomyces cerevisiae* proteins, the x-axis is randomly ordered. (B) Final state of the same adjacency matrix using the ordered protein list obtained. The interaction between two proteins is represented by a black dot.
+
 
 ## Authors
 The software was developed by [Felipe Kuentzer](http://lattes.cnpq.br/1979213773480902), in collaboration with 
@@ -59,7 +63,7 @@ contains an [example file](data/362663.protein.links.900.v11.0.txt) from *Escher
 Protein-protein interaction network data can be downloaded from [STRING](https://string-db.org/). You may choose to download the information with the subscores per channel and tune your filters. The input must be a file containing two columns, no header, with rows composed by the IDs of two proteins that interact with each other.
 
 ## Outputs
-Two text files will be saved in the association file directory, one containing the prefix "energy_" detailing the ordering process, and one containing the prefix "ordering_" (this will be your ordered list). The lower the final energy, the better the ordered list. To improve the outputs, I suggest to increase the number of Monte Carlo steps to 20000.
+Two text files will be saved in the association file directory, one containing the prefix "energy_" detailing the ordering process, and one containing the prefix "ordering_" (this will be your ordered list). The lower the final energy, the better the ordered list. I suggest to increase the number of Monte Carlo steps to 20000 to improve the outputs.
 
 This repository contains an [example of the output produced by this software](output/ordering_362663.protein.links.900.v11.0.txt)
 for the *Escherichia coli* PPI network.
