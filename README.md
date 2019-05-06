@@ -1,4 +1,4 @@
-## About this software
+﻿## About this software
 This software solves the [Seriation](http://www.jstatsoft.org/v25/i03) problem finding a suitable linear order for a set of proteins. The result is a list of proteins ordered in one dimension such that functionally associated proteins are closer.
 
 ![figure](figure/F1.png)
@@ -72,7 +72,7 @@ for the *Escherichia coli* PPI network.
 The source code is distributed under the terms of the GNU General Public License v3 [GPL](http://www.gnu.org/copyleft/gpl.html).
 
 ## How to cite this software
-If you are using this package on your research please cite:
+If you are using this software on your research please cite:
 
 * [Kuentzer, F. A. et al. (2014). Optimization and analysis of seriation algorithm for ordering protein networks.
 IEEE International Conference on Bioinformatics and Bioengineering, 231-237.](https://doi.org/10.1109/BIBE.2014.43)
